@@ -65,48 +65,6 @@ public class Carmax{
             return -1;
         }     
     }
-    class Car{
-        private boolean isWorking = true;
-    }
-    class Engine extends Car{
-        eisWorking = true;
-    }
-    class brakes extends Car{
-        brisWorking = true;
-    }
-    class tailLights extends Car{
-        tlisWorking = true;
-    }
-    class headLights extends Car{
-        hlisWorking = true;
-    }
-    class engine extends Car{
-        eisWorking = true;
-    }
-    class windshield extends Car{
-        wisWorking = true;
-    }
-    class ABS extends Car{
-        absisWorking = true;
-    }
-    class airbags extends Car{
-        abisWorking = true;
-    }
-    class ac extends Car{
-        acisWorking = true;
-    }
-    class sparkPlugs extends Car{
-        isWorking = true;
-    }
-    class oilFilter extends Car{
-        ofisWorking = true;
-    }
-    class battery extends Car{
-        bisWorking = true;
-    }
-    class wheelAxle extends Car{
-        waisWorking = true;
-    }
     public static void main(String[] args){
         public Car();
 }
