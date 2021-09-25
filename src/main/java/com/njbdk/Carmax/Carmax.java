@@ -41,6 +41,8 @@ public class Carmax {
         carParts.add(new CarPart("Radiator"));
         carParts.add(new CarPart("General Exterior"));
         carParts.add(new CarPart("Interior"));
+        carParts.add(new CarPart("Rear Window"));
+        carParts.add(new CarPart("Door Windows"));
     }
 
     /*search method to determine if (and where) the car part is in the list
