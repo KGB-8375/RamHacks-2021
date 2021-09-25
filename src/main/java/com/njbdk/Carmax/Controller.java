@@ -5,9 +5,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class Controller {
-    
+    Carmax carmax = new Carmax();
+
     @GetMapping("/")
     public String index() {
-        return "Hello world!";
+        return String.format("Car is %.0f%% complete!\n", carmax.carProgress() * 100.0);
     }
 }
