@@ -116,6 +116,11 @@ public class Carmax {
 
         return brokenParts.toArray(new String[brokenParts.size()]);
     }
+    public CarPart[] carParts_a() {
+        
+
+        return carParts.toArray(new CarPart[carParts.size()]);
+    }
 
     //method to get the object from the list based on the name
     public CarPart getPart(String name) {
