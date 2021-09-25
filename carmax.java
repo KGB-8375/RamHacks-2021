@@ -1,4 +1,7 @@
-public class CarPart{
+import java.util.ArrayList;
+import java.util.List;
+
+class CarPart {
     private boolean isWorking = true;
     private String name;
     
@@ -19,59 +22,61 @@ public class CarPart{
     }
 }
 
-public class Carmax{
-    List<CarPart> carParts = new List<CarPart>;
-    private int x;
+public class Carmax {
+    private List<CarPart> carParts = new ArrayList<CarPart>();
 
-    carParts.add(new CarPart("Brakes"));
-    carParts.add(new CarPart("Tail Lights"));
-    carParts.add(new CarPart("Head Lights"));
-    carParts.add(new CarPart("Engine"));
-    carParts.add(new CarPart("Windsheild"));
-    carParts.add(new CarPart("ABS"));
-    carParts.add(new CarPart("Airbags"));
-    carParts.add(new CarPart("AC"));
-    carParts.add(new CarPart("Spark Plugs"));
-    carParts.add(new CarPart("Oil Filter"));
-    carParts.add(new CarPart("Battery"));
-    carParts.add(new CarPart("Wheel Axle"))
-    carParts.add(new CarPart("Fuel Guage"));
-    carParts.add(new CarPart("Odometer"));
-    carParts.add(new CarPart("Radio"));
-    carParts.add(new CarPart("Antenna Setup"));
-    carParts.add(new CarPart("Turn Signals"));
-    carParts.add(new CarPart("Starter"));
-    carParts.add(new CarPart("Horn"));
-    carParts.add(new CarPart("Suspension"));
-    carParts.add(new CarPart("Tires"));
-    carParts.add(new CarPart("Fuses"));
-    carParts.add(new CarPart("Performance Chip"));
-    carParts.add(new CarPart("Alternator"));
-    carParts.add(new CarPart("Door Locks"));
-    carParts.add(new CarPart("Bumper"));
-    carParts.add(new CarPart("Hood"));
-    carParts.add(new CarPart("Doors"));
-    carParts.add(new CarPart("Radiator"));
-    carParts.add(new CarPart("General Exterior"));
-    carParts.add(new CarPart("Interior"));
+    public Carmax() {
+        carParts.add(new CarPart("Brakes"));
+        carParts.add(new CarPart("Tail Lights"));
+        carParts.add(new CarPart("Head Lights"));
+        carParts.add(new CarPart("Engine"));
+        carParts.add(new CarPart("Windsheild"));
+        carParts.add(new CarPart("ABS"));
+        carParts.add(new CarPart("Airbags"));
+        carParts.add(new CarPart("AC"));
+        carParts.add(new CarPart("Spark Plugs"));
+        carParts.add(new CarPart("Oil Filter"));
+        carParts.add(new CarPart("Battery"));
+        carParts.add(new CarPart("Wheel Axle"))
+        carParts.add(new CarPart("Fuel Guage"));
+        carParts.add(new CarPart("Odometer"));
+        carParts.add(new CarPart("Radio"));
+        carParts.add(new CarPart("Antenna Setup"));
+        carParts.add(new CarPart("Turn Signals"));
+        carParts.add(new CarPart("Starter"));
+        carParts.add(new CarPart("Horn"));
+        carParts.add(new CarPart("Suspension"));
+        carParts.add(new CarPart("Tires"));
+        carParts.add(new CarPart("Fuses"));
+        carParts.add(new CarPart("Performance Chip"));
+        carParts.add(new CarPart("Alternator"));
+        carParts.add(new CarPart("Door Locks"));
+        carParts.add(new CarPart("Bumper"));
+        carParts.add(new CarPart("Hood"));
+        carParts.add(new CarPart("Doors"));
+        carParts.add(new CarPart("Radiator"));
+        carParts.add(new CarPart("General Exterior"));
+        carParts.add(new CarPart("Interior"));
+    }
 
     private int searchForIndex(String partName){
+        int x;
         if(carParts.isEmpty() == false){
-            x = indexOf(partName);
+            x = carParts.indexOf(partName);
             if (x != -1)
                 return x;
         }
         else{
             System.out.println("Car part does not exist");
-            return -1;
         }     
+        return -1;
     }
 
     private double carProgress() {
         int broken = 0;
 
         for(int i = 0; i < carParts.size(); i++) {
-            if(carParts.get(i).isWorking == false) {
+            if(carParts.get(i).isWorking() == false) {
                 broken++;
             }
         }
@@ -80,7 +85,7 @@ public class Carmax{
     }
 
     public static void main(String[] args){
-        public Car();
+        public Carmax carmax = new Carmax();
         System.out.println("Index of Windshield: " + searchForIndex("Windshield"));
         System.out.println("Progress: " + carProgress());
         String notworking = "";
