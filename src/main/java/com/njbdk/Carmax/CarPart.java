@@ -33,6 +33,14 @@ public class CarPart {
         this.name = name;
         this.id = toCamel(name);
     }
+    public CarPart(String name, boolean isWorking, Duration eta, String condition, double cost){
+        this.name = name;
+        this.id = toCamel(name);
+        this.isWorking = isWorking;
+        this.eta = eta;
+        this.condition = condition;
+        this.cost = cost;
+    }
 
     //getter to return name
     //returns String name
