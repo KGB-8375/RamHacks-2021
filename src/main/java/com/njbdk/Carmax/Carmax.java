@@ -1,8 +1,8 @@
+package com.njbdk.Carmax;
+
 //import statements
 import java.util.ArrayList;
 import java.util.List;
-import java.applet.*;
-import java.awt.*;
 
 //class to create carParts
 class CarPart {
