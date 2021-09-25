@@ -4,35 +4,6 @@ package com.njbdk.Carmax;
 import java.util.ArrayList;
 import java.util.List;
 
-//class to create carParts
-class CarPart {
-    private boolean isWorking = true; //if the part is working
-    private String name; //name of part
-    
-    //constructor that sets name
-    public CarPart(String name) {
-        this.name = name;
-    }
-
-    //setter to change name
-    //returns void
-    public void setWorking(boolean working) {
-        this.isWorking = working;
-    }
-
-    //getter to check if the part is working
-    //returns boolean true if working
-    public boolean isWorking() {
-        return this.isWorking;
-    }
-
-    //getter to return name
-    //returns String name
-    public String name() {
-        return this.name;
-    }
-}
-
 //Class to contruct a car
 public class Carmax {
     private List<CarPart> carParts = new ArrayList<CarPart>(); //makes list for carParts
@@ -75,7 +46,7 @@ public class Carmax {
     /*search method to determine if (and where) the car part is in the list
      * returns int x if the string is found and -1 if not
      */ 
-    public int searchForIndex(String partName){
+    private int searchForIndex(String partName){
         int x = -1;
         String a;
         if(carParts.isEmpty() == false) { //checks if list is empty
@@ -87,6 +58,20 @@ public class Carmax {
         }
         System.out.println("Car part does not exist");  
         return x; //tells user that car part is not in list
+    }
+
+    private int searchForIndex_id(String partId) {
+        int x = -1;
+        String a;
+        if(carParts.isEmpty() == false) {
+            for(int i = 0; i < carParts.size(); i++) {
+                a = carParts.get(i).id();
+                if (a.compareTo(partId) == 0)
+                    return (x=i);
+            }
+        }
+        System.out.println("Car part does not exist");
+        return x;
     }
 
     /*method to determine how broken a car is 
@@ -120,9 +105,27 @@ public class Carmax {
         return notworking; //return a string of all the broken parts
     }
 
+    public String[] brokenParts_a() {
+        List<String> brokenParts = new ArrayList<String>();
+
+        for(int i = 0; i < carParts.size(); i++) {
+            if(carParts.get(i).isWorking() == false) {
+                brokenParts.add(carParts.get(i).name());
+            }
+        }
+
+        return brokenParts.toArray(new String[brokenParts.size()]);
+    }
+
     //method to get the object from the list based on the name
     public CarPart getPart(String name) {
-        return carParts.get(searchForIndex(name));
+        int x = searchForIndex_id(name);
+
+        if(x == -1) {
+            return null;
+        }
+
+        return carParts.get(x);
     }
 }
 
