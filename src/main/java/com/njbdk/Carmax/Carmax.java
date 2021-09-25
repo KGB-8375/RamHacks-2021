@@ -105,20 +105,18 @@ public class Carmax {
         return notworking; //return a string of all the broken parts
     }
 
-    public String[] brokenParts_a() {
-        List<String> brokenParts = new ArrayList<String>();
+    public CarPart[] brokenParts_a() {
+        List<CarPart> brokenParts = new ArrayList<CarPart>();
 
         for(int i = 0; i < carParts.size(); i++) {
             if(carParts.get(i).isWorking() == false) {
-                brokenParts.add(carParts.get(i).getName());
+                brokenParts.add(carParts.get(i));
             }
         }
 
-        return brokenParts.toArray(new String[brokenParts.size()]);
+        return brokenParts.toArray(new CarPart[brokenParts.size()]);
     }
     public CarPart[] carParts_a() {
-        
-
         return carParts.toArray(new CarPart[carParts.size()]);
     }
 
