@@ -43,42 +43,6 @@ public class Carmax{
     }
     public static void main(String[] args){
         public Car();
-    public boolean setacisworking(boolean isworking){
-            this.acisworking = isworking;
-        }
-    public void setspisworking(boolean isworking){
-            this.spisworking = isworking;
-        }
-    public void seteisworking(boolean isworking){
-            this.eisworking = isworking;
-        }
-    public void settlisworking(boolean isworking){
-            this.tlisworking = isworking;
-        }
-    public void sethlisworking(boolean isworking){
-            this.hlisworking = isworking;
-        }
-    public void setbrisworking(boolean isworking){
-            this.brisworking = isworking;
-        }
-    public void setwisworking(boolean isworking){
-            this.wisworking = isworking;
-        }
-    public void setabsisworking(boolean isworking){
-            this.absisworking = isworking;
-        }
-    public void setabisworking(boolean isworking){
-            this.abisworking = isworking;
-        }
-    public void setofisworking(boolean isworking){
-            this.ofisworking = isworking;
-        }
-    public void setbisworking(boolean isworking){
-            this.bisworking = isworking;
-        }
-    public void setwaisworking(boolean is working){
-            this.waisworking = isworking;
-        }
 }
 }
 
