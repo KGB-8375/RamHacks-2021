@@ -21,6 +21,7 @@ public class CarPart{
 
 public class Carmax{
     List<CarPart> carParts = new List<CarPart>;
+    private int x;
 
     carParts.add(new CarPart("Brakes"));
     carParts.add(new CarPart("Tail Lights"));
@@ -53,7 +54,17 @@ public class Carmax{
     carParts.add(new CarPart("Radiator"));
     carParts.add(new CarPart("General Exterior"));
     carParts.add(new CarPart("Interior"));
-
+    private int searchForIndex(String partName){
+        if(carParts.isEmpty() == false){
+            x = indexOf(partName);
+            if (x != -1)
+                return x;
+        }
+        else{
+            System.out.println("Car part does not exist");
+            return -1;
+        }     
+    }
     class Car{
         private boolean isWorking = true;
     }
