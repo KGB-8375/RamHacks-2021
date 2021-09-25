@@ -27,7 +27,7 @@ public class Carmax{
     carParts.add(new CarPart("Tail Lights"));
     carParts.add(new CarPart("Head Lights"));
     carParts.add(new CarPart("Engine"));
-    carParts.add(new CarPart("Windshield"));
+    carParts.add(new CarPart("Windsheild"));
     carParts.add(new CarPart("ABS"));
     carParts.add(new CarPart("Airbags"));
     carParts.add(new CarPart("AC"));
@@ -81,11 +81,16 @@ public class Carmax{
 
     public static void main(String[] args){
         public Car();
-        System.out.println("Index of Windshield: " + searchForIndex("Windshield"));
-        System.out.println("Progress: " + carProgress());
-        for(i = 0; i < carparts.size(); carparts.next()){
         String notworking = "";
-        if (carparts.curr 
+        for(i = 0; i < carparts.size(); i++){
+            if (notworking == "" && carparts.(isworking) == false){
+                  notworking += carparts.get(i);
+            }
+            else if (carparts.(isworking) == false){
+                notworking += ", " + carparts.get(i);
+            }
+        }
+        System.out.print(notworking);
 }
 }
 
