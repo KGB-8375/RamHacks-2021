@@ -30,7 +30,7 @@ class Carmax {
         carParts.add(new CarPart("Tail Lights"));
         carParts.add(new CarPart("Head Lights"));
         carParts.add(new CarPart("Engine"));
-        carParts.add(new CarPart("Windsheild"));
+        carParts.add(new CarPart("Windshield"));
         carParts.add(new CarPart("ABS"));
         carParts.add(new CarPart("Airbags"));
         carParts.add(new CarPart("AC"));
@@ -60,7 +60,7 @@ class Carmax {
     }
 
     public int searchForIndex(String partName){
-        int x = 0;
+        int x = -1;
         String a;
         if(carParts.isEmpty() == false) {
             for(int i = 0; i < carParts.size(); i ++){
@@ -71,9 +71,7 @@ class Carmax {
                     return x;
             }
         }
-        else{
-            System.out.println("Car part does not exist");
-        }     
+        System.out.println("Car part does not exist");  
         return -1;
     }
 
@@ -101,13 +99,19 @@ class Carmax {
         }
         return notworking;
     }
+
+    public CarPart getPart(String name) {
+        return carParts.get(searchForIndex(name));
+    }
 }
 
 public class Main {
     public static void main(String[] args){
         Carmax carmax = new Carmax();
         System.out.println("Index of Windshield: " + carmax.searchForIndex("Windshield"));
-        System.out.println("Progress: " + carmax.carProgress());
+        CarPart windshield = carmax.getPart("Windshield");
+        windshield.setWorking(false);
+        System.out.printf("Progress: %.0f%%\n", carmax.carProgress() * 100.0);
         System.out.println("Parts not working: " + carmax.brokenParts());
     }
 }
