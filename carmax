@@ -27,7 +27,7 @@ public class Carmax{
     carParts.add(new CarPart("Tail Lights"));
     carParts.add(new CarPart("Head Lights"));
     carParts.add(new CarPart("Engine"));
-    carParts.add(new CarPart("Windsheild"));
+    carParts.add(new CarPart("Windshield"));
     carParts.add(new CarPart("ABS"));
     carParts.add(new CarPart("Airbags"));
     carParts.add(new CarPart("AC"));
@@ -65,6 +65,7 @@ public class Carmax{
             return -1;
         }     
     }
+    
     class Car{
         private boolean isWorking = true;
     }
@@ -109,6 +110,8 @@ public class Carmax{
     }
     public static void main(String[] args){
         public Car();
+        System.out.println("Index of Windshield: " + searchForIndex("Windshield"));
+        System.out.println("Progress: " + carProgress());
 }
 }
 
