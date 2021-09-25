@@ -37,7 +37,7 @@ public class Carmax {
         carParts.add(new CarPart("Spark Plugs"));
         carParts.add(new CarPart("Oil Filter"));
         carParts.add(new CarPart("Battery"));
-        carParts.add(new CarPart("Wheel Axle"))
+        carParts.add(new CarPart("Wheel Axle"));
         carParts.add(new CarPart("Fuel Guage"));
         carParts.add(new CarPart("Odometer"));
         carParts.add(new CarPart("Radio"));
@@ -60,9 +60,9 @@ public class Carmax {
     }
 
     public int searchForIndex(String partName){
-        int x;
+        int x = 0;
         String a;
-        if(carParts.isEmpty() == false){
+        if(carParts.isEmpty() == false) {
             for(int i = 0; i < carParts.size(); i ++){
                 a = carParts.get(i).name(); 
                 if (a.compareTo(partName) == 0)
@@ -86,7 +86,7 @@ public class Carmax {
             }
         }
 
-        return (carParts.size() - broken) / (double) carParts.size());
+        return (carParts.size() - broken) / (double) carParts.size();
     }
 
     public String brokenParts() {
