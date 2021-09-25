@@ -1,7 +1,7 @@
 public class CarPart{
     private boolean isWorking = true;
     private String name;
-
+    
     public CarPart(String name) {
         name = name;
     }
@@ -67,6 +67,9 @@ public class Carmax{
     }
     public static void main(String[] args){
         public Car();
+        for(i = 0; i < carparts.size(); carparts.next()){
+        String notworking = "";
+        if (carparts.curr 
 }
 }
 
