@@ -30,6 +30,10 @@ public class Carmax{
     carParts.add(new CarPart("ABS"));
     carParts.add(new CarPart("Airbags"));
     carParts.add(new CarPart("AC"));
+    carParts.add(new CarPart("Spark Plugs"));
+    carParts.add(new CarPart("Oil Filter"));
+    carParts.add(new CarPart("Battery"));
+    carParts.add(new CarPart("Wheel Axle"))
     carParts.add(new CarPart("Fuel Guage"));
     carParts.add(new CarPart("Odometer"));
     carParts.add(new CarPart("Radio"));
@@ -37,6 +41,14 @@ public class Carmax{
     carParts.add(new CarPart("Turn Signals"));
     carParts.add(new CarPart("Starter"));
     carParts.add(new CarPart("Horn"));
+    carParts.add(new CarPart("Suspension"));
+    carParts.add(new CarPart("Tires"));
+    carParts.add(new CarPart("Fuses"));
+    carParts.add(new CarPart("Performance Chip"));
+    carParts.add(new CarPart("Alternator"));
+    carParts.add(new CarPart("Door Locks"));
+    carParts.add(new CarPart("Bumper"));
+    carParts.add(new CarPart("Hood"));
     carParts.add(new CarPart("Doors"));
     carParts.add(new CarPart("Radiator"));
     carParts.add(new CarPart("General Exterior"));
