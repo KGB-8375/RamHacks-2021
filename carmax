@@ -1,19 +1,48 @@
 public class Carmax{
-    class Car{}
-    class Engine extends Car{}
-    class brakes extends Car{}
-    class tailLights extends Car{}
-    class headLights extends Car{}
-    class engine extends Car{}
-    class windshield extends Car{}
-    class ABS extends Car{}
-    class airbags extends Car{}
-    class ac extends Car{}
-    class sparkPlugs extends Car{}
-    class oilFilter extends Car{}
-    class battery extends Car{}
-    class wheelAxle extends Car{}
+    class Car{
+        private boolean isWorking = true;
+    }
+    class Engine extends Car{
+        isWorking = true;
+    }
+    class brakes extends Car{
+        isWorking = true;
+    }
+    class tailLights extends Car{
+        isWorking = true;
+    }
+    class headLights extends Car{
+        isWorking = true;
+    }
+    class engine extends Car{
+        isWorking = true;
+    }
+    class windshield extends Car{
+        isWorking = true;
+    }
+    class ABS extends Car{
+        isWorking = true;
+    }
+    class airbags extends Car{
+        isWorking = true;
+    }
+    class ac extends Car{
+        isWorking = true;
+    }
+    class sparkPlugs extends Car{
+        isWorking = true;
+    }
+    class oilFilter extends Car{
+        isWorking = true;
+    }
+    class battery extends Car{
+        isWorking = true;
+    }
+    class wheelAxle extends Car{
+        isWorking = true;
+    }
     public static void main(String[] args){
+        public Car();
 }
 }
 
