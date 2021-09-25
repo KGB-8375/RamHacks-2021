@@ -1,2 +1,19 @@
-public class carmax{
-public static void main(String[] args){
+public class Carmax{
+    class Car{}
+    class Engine extends Car{}
+    class brakes extends Car{}
+    class tailLights extends Car{}
+    class headLights extends Car{}
+    class engine extends Car{}
+    class windshield extends Car{}
+    class ABS extends Car{}
+    class airbags extends Car{}
+    class ac extends Car{}
+    class sparkPlugs extends Car{}
+    class oilFilter extends Car{}
+    class battery extends Car{}
+    class wheelAxle extends Car{}
+    public static void main(String[] args){
+}
+}
+
