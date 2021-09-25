@@ -76,7 +76,7 @@ public class Carmax{
             }
         }
 
-        return (carParts.size() - broken) / (double) carParts.size();
+        return (carParts.size() - broken) / (double) carParts.size());
     }
 
     public static void main(String[] args){
