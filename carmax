@@ -67,6 +67,8 @@ public class Carmax{
     }
     public static void main(String[] args){
         public Car();
+        System.out.println("Index of Windshield: " + searchForIndex("Windshield"));
+        System.out.println("Progress: " + carProgress());
         String notworking = "";
         for(i = 0; i < carparts.size(); i++){
             if (notworking == "" && carparts.(isworking) == false){
