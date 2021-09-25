@@ -12,6 +12,7 @@ public class Controller {
     public CarPart[] working(){
         return carmax.carParts_a();
     }
+    
     @GetMapping("/search")
     public CarPart search(@RequestParam(value = "name") String name) {
         return carmax.getPart(name);
