@@ -43,6 +43,7 @@ public class Carmax {
         carParts.add(new CarPart("Interior"));
         carParts.add(new CarPart("Rear Window"));
         carParts.add(new CarPart("Door Windows"));
+        carParts.add(new CarPart("Oil"));
     }
 
     /*search method to determine if (and where) the car part is in the list
@@ -58,7 +59,7 @@ public class Carmax {
                     return (x=i); // returns index if found
             }
         }
-        System.out.println("Car part does not exist");  
+        System.out.println("Car part does not exist: " + partName);  
         return x; //tells user that car part is not in list
     }
 
@@ -72,7 +73,7 @@ public class Carmax {
                     return (x=i);
             }
         }
-        System.out.println("Car part does not exist");
+        System.out.println("Car part does not exist: " + partId);
         return x;
     }
 
