@@ -72,7 +72,7 @@ public class Carmax{
             if (notworking == "" && carparts.(isworking) == false){
                   notworking += carparts.get(i);
             }
-            if (carparts.(isworking) == false){
+            else if (carparts.(isworking) == false){
                 notworking += ", " + carparts.get(i);
             }
         }
