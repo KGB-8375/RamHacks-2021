@@ -1,5 +1,10 @@
 public class CarPart{
     private boolean isWorking = true;
+    private String name;
+
+    public CarPart(String name) {
+        name = name;
+    }
 
     public void setWorking(boolean working) {
         this.isWorking = working;
@@ -8,9 +13,35 @@ public class CarPart{
     public boolean isWorking() {
         return this.isWorking;
     }
+
+    public String name() {
+        return this.name;
+    }
 }
 
 public class Carmax{
+    List<CarPart> carParts = new List<CarPart>;
+
+    carParts.add(new CarPart("Brakes"));
+    carParts.add(new CarPart("Tail Lights"));
+    carParts.add(new CarPart("Head Lights"));
+    carParts.add(new CarPart("Engine"));
+    carParts.add(new CarPart("Windsheild"));
+    carParts.add(new CarPart("ABS"));
+    carParts.add(new CarPart("Airbags"));
+    carParts.add(new CarPart("AC"));
+    carParts.add(new CarPart("Fuel Guage"));
+    carParts.add(new CarPart("Odometer"));
+    carParts.add(new CarPart("Radio"));
+    carParts.add(new CarPart("Antenna Setup"));
+    carParts.add(new CarPart("Turn Signals"));
+    carParts.add(new CarPart("Starter"));
+    carParts.add(new CarPart("Horn"));
+    carParts.add(new CarPart("Doors"));
+    carParts.add(new CarPart("Radiator"));
+    carParts.add(new CarPart("General Exterior"));
+    carParts.add(new CarPart("Interior"));
+
     class Car{
         private boolean isWorking = true;
     }
