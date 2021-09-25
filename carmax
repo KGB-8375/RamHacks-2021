@@ -1,3 +1,15 @@
+public class CarPart{
+    private boolean isWorking = true;
+
+    public void setWorking(boolean working) {
+        this.isWorking = working;
+    }
+
+    public boolean isWorking() {
+        return this.isWorking;
+    }
+}
+
 public class Carmax{
     class Car{
         private boolean isWorking = true;
