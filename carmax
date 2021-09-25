@@ -3,7 +3,7 @@ public class CarPart{
     private String name;
     
     public CarPart(String name) {
-        name = name;
+        this.name = name;
     }
 
     public void setWorking(boolean working) {
