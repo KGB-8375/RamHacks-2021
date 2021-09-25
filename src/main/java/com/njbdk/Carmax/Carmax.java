@@ -3,6 +3,7 @@ package com.njbdk.Carmax;
 //import statements
 import java.util.ArrayList;
 import java.util.List;
+import java.time.Duration;
 
 //Class to contruct a car
 public class Carmax {
@@ -10,7 +11,7 @@ public class Carmax {
 
     //constructor to add all car parts
     public Carmax() {
-        carParts.add(new CarPart("Brakes"));
+        carParts.add(new CarPart("Brakes", false, Duration.ofMillis(20), "lil bit squeaky", 2000.69));
         carParts.add(new CarPart("Tail Lights"));
         carParts.add(new CarPart("Head Lights"));
         carParts.add(new CarPart("Engine"));
