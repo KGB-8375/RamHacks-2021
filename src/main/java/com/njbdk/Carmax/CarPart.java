@@ -36,11 +36,11 @@ public class CarPart {
 
     //getter to return name
     //returns String name
-    public String name() {
+    public String getName() {
         return this.name;
     }
 
-    public String id() {
+    public String getId() {
         return this.id;
     }
 
@@ -73,17 +73,17 @@ public class CarPart {
     }
 
     //getter to check ETA until part is fixed
-    public Duration eta() {
+    public Duration getEta() {
         return this.eta;
     }
 
     //getter to check condition of part
-    public String condition() {
+    public String getCondition() {
         return this.condition;
     }
 
     //getter to check cost to fix/replace part
-    public double cost() {
+    public double getCost() {
         return this.cost;
     }
 }
