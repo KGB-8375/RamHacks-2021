@@ -59,7 +59,7 @@ public class Carmax {
         carParts.add(new CarPart("Interior"));
     }
 
-    private int searchForIndex(String partName){
+    public int searchForIndex(String partName){
         int x;
         if(carParts.isEmpty() == false){
             x = carParts.indexOf(partName);
@@ -72,7 +72,7 @@ public class Carmax {
         return -1;
     }
 
-    private double carProgress() {
+    public double carProgress() {
         int broken = 0;
 
         for(int i = 0; i < carParts.size(); i++) {
@@ -84,20 +84,26 @@ public class Carmax {
         return (carParts.size() - broken) / (double) carParts.size());
     }
 
-    public static void main(String[] args){
-        public Carmax carmax = new Carmax();
-        System.out.println("Index of Windshield: " + searchForIndex("Windshield"));
-        System.out.println("Progress: " + carProgress());
+    public String brokenParts() {
         String notworking = "";
-        for(i = 0; i < carparts.size(); i++){
-            if (notworking == "" && carparts.(isworking) == false){
-                  notworking += carparts.get(i);
+        for(int i = 0; i < carParts.size(); i++){
+            if (notworking == "" && carParts.get(i).isWorking() == false) {
+                  notworking += carParts.get(i).name();
             }
-            else if (carparts.(isworking) == false){
-                notworking += ", " + carparts.get(i);
+            else if (carParts.get(i).isWorking() == false){
+                notworking += ", " + carParts.get(i).name();
             }
         }
-        System.out.print(notworking);
+        return notworking;
+    }
 }
+
+class Main {
+    public static void main(String[] args){
+        Carmax carmax = new Carmax();
+        System.out.println("Index of Windshield: " + carmax.searchForIndex("Windshield"));
+        System.out.println("Progress: " + carmax.carProgress());
+        System.out.println("Parts not working: " + carmax.brokenParts());
+    }
 }
 
