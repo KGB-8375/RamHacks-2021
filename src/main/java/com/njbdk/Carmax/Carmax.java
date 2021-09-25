@@ -42,6 +42,8 @@ public class Carmax {
         carParts.add(new CarPart("Radiator"));
         carParts.add(new CarPart("General Exterior"));
         carParts.add(new CarPart("Interior"));
+        carParts.add(new CarPart("Rear Window"));
+        carParts.add(new CarPart("Door Windows"));
     }
 
     /*search method to determine if (and where) the car part is in the list
@@ -131,19 +133,14 @@ public class Carmax {
 
         return carParts.get(x);
     }
-}
 
-//main class to run the program and test methods
-//public class Main {
-/*main method
- *@returns void
- */ 
-/*    public static void main(String[] args){
-        Carmax carmax = new Carmax(); //creates new Car/carmax object
-        System.out.println("Index of Windshield: " + carmax.searchForIndex("Windshield")); //find index of Windshield
-        CarPart windshield = carmax.getPart("Windshield"); //finds windshield object 
-        windshield.setWorking(false); //set windshield to not working
-        System.out.printf("Progress: %.0f%%\n", carmax.carProgress() * 100.0); //displays progress as a percentage
-        System.out.println("Parts not working: " + carmax.brokenParts()); //displays all the parts that are not working
+    //method to remove car part
+    public void removePart(String name) {
+        carParts.remove(searchForIndex_id(name));
     }
-}*/
+
+    //method to add car part
+    public void addPart(String name) {
+        carParts.add(new CarPart(name));
+    }
+}
