@@ -51,7 +51,7 @@ public class Carmax {
         String a;
         if(carParts.isEmpty() == false) { //checks if list is empty
             for(int i = 0; i < carParts.size(); i ++){
-                a = carParts.get(i).name(); //gets the name of every part in list
+                a = carParts.get(i).getName(); //gets the name of every part in list
                 if (a.compareTo(partName) == 0)
                     return (x=i); // returns index if found
             }
@@ -65,7 +65,7 @@ public class Carmax {
         String a;
         if(carParts.isEmpty() == false) {
             for(int i = 0; i < carParts.size(); i++) {
-                a = carParts.get(i).id();
+                a = carParts.get(i).getId();
                 if (a.compareTo(partId) == 0)
                     return (x=i);
             }
@@ -96,10 +96,10 @@ public class Carmax {
         String notworking = "";
         for(int i = 0; i < carParts.size(); i++){
             if (notworking == "" && carParts.get(i).isWorking() == false) {
-                  notworking += carParts.get(i).name(); //if list is empty, add the name of first broken part
+                  notworking += carParts.get(i).getName(); //if list is empty, add the name of first broken part
             }
             else if (carParts.get(i).isWorking() == false){
-                notworking += ", " + carParts.get(i).name(); //if an entry has already been made to the list of broken parts, add a comma and space
+                notworking += ", " + carParts.get(i).getName(); //if an entry has already been made to the list of broken parts, add a comma and space
             }
         }
         return notworking; //return a string of all the broken parts
@@ -110,7 +110,7 @@ public class Carmax {
 
         for(int i = 0; i < carParts.size(); i++) {
             if(carParts.get(i).isWorking() == false) {
-                brokenParts.add(carParts.get(i).name());
+                brokenParts.add(carParts.get(i).getName());
             }
         }
 
