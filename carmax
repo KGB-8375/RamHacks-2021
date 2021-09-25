@@ -1,7 +1,7 @@
 public class CarPart{
     private boolean isWorking = true;
     private String name;
-
+    
     public CarPart(String name) {
         name = name;
     }
@@ -65,53 +65,18 @@ public class Carmax{
             return -1;
         }     
     }
+<<<<<<< HEAD
     
-    class Car{
-        private boolean isWorking = true;
-    }
-    class Engine extends Car{
-        eisWorking = true;
-    }
-    class brakes extends Car{
-        brisWorking = true;
-    }
-    class tailLights extends Car{
-        tlisWorking = true;
-    }
-    class headLights extends Car{
-        hlisWorking = true;
-    }
-    class engine extends Car{
-        eisWorking = true;
-    }
-    class windshield extends Car{
-        wisWorking = true;
-    }
-    class ABS extends Car{
-        absisWorking = true;
-    }
-    class airbags extends Car{
-        abisWorking = true;
-    }
-    class ac extends Car{
-        acisWorking = true;
-    }
-    class sparkPlugs extends Car{
-        isWorking = true;
-    }
-    class oilFilter extends Car{
-        ofisWorking = true;
-    }
-    class battery extends Car{
-        bisWorking = true;
-    }
-    class wheelAxle extends Car{
-        waisWorking = true;
-    }
+    
+=======
     public static void main(String[] args){
         public Car();
         System.out.println("Index of Windshield: " + searchForIndex("Windshield"));
         System.out.println("Progress: " + carProgress());
+        for(i = 0; i < carparts.size(); carparts.next()){
+        String notworking = "";
+        if (carparts.curr 
+>>>>>>> 6433bddb53ede9f33676be12d04b7de86def7d23
 }
 }
 
