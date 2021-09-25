@@ -61,10 +61,15 @@ public class Carmax {
 
     private int searchForIndex(String partName){
         int x;
+        String a;
         if(carParts.isEmpty() == false){
-            x = carParts.indexOf(partName);
-            if (x != -1)
-                return x;
+            for(int i = 0; i < carParts.size(); i ++){
+                a = carParts.get(i).name(); 
+                if (a.compareTo(partName) == 0)
+                    return (x=i);
+                if (x != -1)
+                    return x;
+            }
         }
         else{
             System.out.println("Car part does not exist");
