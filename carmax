@@ -41,6 +41,8 @@ public class Carmax{
     class wheelAxle extends Car{
         waisWorking = true;
     }
+    public static void main(String[] args){
+        public Car();
     public boolean setacisworking(boolean isworking){
             this.acisworking = isworking;
         }
@@ -77,8 +79,6 @@ public class Carmax{
     public void setwaisworking(boolean is working){
             this.waisworking = isworking;
         }
-    public static void main(String[] args){
-        public Car();
 }
 }
 
