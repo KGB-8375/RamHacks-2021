@@ -25,3 +25,7 @@ For the frontend of our site, Spring communicates information to ThymeLeaf which
 We also include a home page to view all car listings, and an error page if the VIM number is missing or incorrectly typed.
 
 ![](./screenshots/home.png)
+
+## How to run
+
+To compile & run using maven, use `./mvnw spring-boot:run`. This requires a Java SDK set up. Then simply go to `localhost:8080` to access the webpage. For specific RESTful api endpoints, see [CarmaxStatusPageController.java](src/main/java/com/njbdk/Carmax/CarmaxStatusPageController.java)
