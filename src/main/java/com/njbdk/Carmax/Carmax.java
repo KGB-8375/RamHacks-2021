@@ -13,7 +13,7 @@ public class Carmax {
 
     //constructor to add all car parts
     public Carmax() {
-        carParts.add(new CarPart("Brakes", false, Duration.ofMillis(20), "lil bit squeaky", 2000.69, true));
+        carParts.add(new CarPart("Brakes", false, Duration.ofMillis(20), "lil bit squeaky", 2000.69, true, 1));
         carParts.add(new CarPart("Tail Lights"));
         carParts.add(new CarPart("Head Lights"));
         carParts.add(new CarPart("Engine"));
@@ -199,5 +199,15 @@ public class Carmax {
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("M/dd/yyyy");
         return formatter.format(date);
+    }
+
+    public int[] vinNumber(){
+        int[] a = new int[carParts.size()];
+        CarPart[] b = brokenParts_a();
+        for(int i = 0; i<b.length; i++){
+            CarPart p = b[i];
+            a[i] = p.getVin();
+        }
+        return a;
     }
 }

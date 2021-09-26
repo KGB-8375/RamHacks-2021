@@ -42,6 +42,7 @@ public class CarmaxStatusPageController {
         model.addAttribute("partsNeedRepair", carmax.repairsNotInProgress());
         model.addAttribute("repairCost", carmax.totalRepairCost());
         model.addAttribute("completeDate", carmax.completeDate());
+        model.addAttribute("vinNumber", carmax.vinNumber());
 		return "index";
 	}
 }
