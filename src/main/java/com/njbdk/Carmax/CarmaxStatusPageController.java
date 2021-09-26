@@ -7,16 +7,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+/* This class controlls all of the endpoints on the web-server, including RESTful api's and webpages */
+
 @Controller
 public class CarmaxStatusPageController {
+    // retrieve car database
     Carmax[] cars = CarmaxStatusPageApplication.cars;
 
+    /* RESTful API endpoints */
+
+    // all car vin nums available
     @ResponseBody
     @GetMapping("/cars")
     public String[] allCars() {
         return getVins();
     }
 
+    // all part objects associated with a car
     @ResponseBody
     @GetMapping("/parts")
     public CarPart[] allParts(@RequestParam(value = "vin") String vin){
@@ -29,6 +36,7 @@ public class CarmaxStatusPageController {
         return null;
     }
 
+    // specific part object in a car
     @ResponseBody
     @GetMapping("/search")
     public CarPart search(@RequestParam(value = "name") String name, @RequestParam(value = "vin") String vin) {
@@ -41,6 +49,7 @@ public class CarmaxStatusPageController {
         return null;
     }
 
+    // broken parts in a car
     @ResponseBody
     @GetMapping("/broken")
     public CarPart[] broken(@RequestParam(value = "vin") String vin) {
@@ -53,6 +62,7 @@ public class CarmaxStatusPageController {
         return null;
     }
 
+    // parts being repaired in a car
     @ResponseBody
     @GetMapping("/repairs")
     public CarPart[] repairs(@RequestParam(value = "vin") String vin) {
@@ -65,6 +75,9 @@ public class CarmaxStatusPageController {
         return null;
     }
 
+    /* Website frontend pages */
+
+    // car's status page
     @RequestMapping(value = "/status")
     public String status(@RequestParam(value = "vin", defaultValue = "Blank") String vin, Model model) {
         Carmax car = lookupVin(vin);
@@ -80,15 +93,20 @@ public class CarmaxStatusPageController {
             return "status";
         }
 
+        // missing VIN error page
         return "error";
 	}
 
+    // home page
     @RequestMapping(value = "/")
     public String home(Model model) {
         model.addAttribute("cars", cars);
         return "index";
     }
 
+    /* helper functions */
+
+    // look up car in database
     private Carmax lookupVin(String vin) {
         for(int i = 0; i < cars.length; i++) {
             if(cars[i].getVin().equals(vin)) {
@@ -98,6 +116,7 @@ public class CarmaxStatusPageController {
         return null;
     }
 
+    // create array of all VIN numbers
     private String[] getVins() {
         String[] vins = new String[cars.length];
         for(int i = 0; i < cars.length; i++) {

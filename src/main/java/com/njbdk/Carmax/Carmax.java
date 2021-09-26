@@ -6,7 +6,8 @@ import java.util.List;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-//Class to contruct a car
+/* Class to contruct a car */
+
 public class Carmax {
     private List<CarPart> carParts = new ArrayList<CarPart>(); //makes list for carParts
     private String vin; //car VIN number
@@ -23,6 +24,7 @@ public class Carmax {
         this.year = year;
         this.picture = picture;
 
+        //all default parts
         carParts.add(new CarPart("Brakes"));
         carParts.add(new CarPart("Tail Lights"));
         carParts.add(new CarPart("Head Lights"));
@@ -76,6 +78,7 @@ public class Carmax {
         return x; //tells user that car part is not in list
     }
 
+    /* search for part with a given ID (camel case) */
     private int searchForIndex_id(String partId) {
         int x = -1;
         String a;
@@ -121,6 +124,7 @@ public class Carmax {
         return notworking; //return a string of all the broken parts
     }
 
+    /*return all car parts that are broken as an array*/
     public CarPart[] brokenParts_a() {
         List<CarPart> brokenParts = new ArrayList<CarPart>();
 
@@ -184,6 +188,7 @@ public class Carmax {
         return partsNeedRepair.toArray(new CarPart[partsNeedRepair.size()]);
     }
 
+    //calculates total repair cost for display
     public double totalRepairCost() {
         double cost = 0.0;
 
@@ -197,6 +202,7 @@ public class Carmax {
         return cost;
     }
 
+    //calculates final completion date for display
     public String completeDate() {
         LocalDateTime date = LocalDateTime.now();
 
@@ -211,26 +217,32 @@ public class Carmax {
         return formatter.format(date);
     }
 
+    //getter for VIN number
     public String getVin() {
         return this.vin;
     }
 
+    //setter for VIN number
     public void setVin(String vin) {
         this.vin = vin;
     }
 
+    //getter for Manufacturer
     public String getMake() {
         return this.make;
     }
 
+    //getter for Model
     public String getModel() {
         return this.model;
     }
 
+    //getter for Year
     public int getYear() {
         return this.year;
     }
 
+    //getter for car's Picture (path)
     public String getPicture() {
         return this.picture;
     }

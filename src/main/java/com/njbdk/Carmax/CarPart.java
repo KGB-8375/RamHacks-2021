@@ -2,6 +2,8 @@ package com.njbdk.Carmax;
 
 import java.time.Duration;
 
+/* Class to construct a car part */
+
 public class CarPart {
     private String name; //name of part
     private String id;
@@ -34,6 +36,8 @@ public class CarPart {
         this.name = name;
         this.id = toCamel(name);
     }
+
+    //overloaded constructor
     public CarPart(String name, boolean isWorking, Duration eta, String condition, double cost, boolean isInProgress){
         this.name = name;
         this.id = toCamel(name);
