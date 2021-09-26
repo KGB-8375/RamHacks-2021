@@ -4,6 +4,8 @@ package com.njbdk.Carmax;
 import java.util.ArrayList;
 import java.util.List;
 import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 //Class to contruct a car
 public class Carmax {
@@ -11,7 +13,7 @@ public class Carmax {
 
     //constructor to add all car parts
     public Carmax() {
-        carParts.add(new CarPart("Brakes", false, Duration.ofMillis(20), "lil bit squeaky", 2000.69));
+        carParts.add(new CarPart("Brakes", false, Duration.ofMillis(20), "lil bit squeaky", 2000.69, true));
         carParts.add(new CarPart("Tail Lights"));
         carParts.add(new CarPart("Head Lights"));
         carParts.add(new CarPart("Engine"));
@@ -143,5 +145,59 @@ public class Carmax {
     //method to add car part
     public void addPart(String name) {
         carParts.add(new CarPart(name));
+    }
+
+    //method to find repairs in progress
+    public CarPart[] repairsInProgress() {
+        List<CarPart> partsInRepair = new ArrayList<CarPart>();
+
+        for(int i = 0; i < carParts.size(); i++) {
+            if(carParts.get(i).isInProgress()) {
+                partsInRepair.add(carParts.get(i));
+            }
+        }
+
+        return partsInRepair.toArray(new CarPart[partsInRepair.size()]);
+    }
+
+    //method to find repairs not in progress
+    public CarPart[] repairsNotInProgress() {
+        List<CarPart> partsNeedRepair = new ArrayList<CarPart>();
+
+        for(int i = 0; i < carParts.size(); i++) {
+            CarPart p = carParts.get(i);
+            if(!p.isInProgress() && !p.isWorking()) {
+                partsNeedRepair.add(p);
+            }
+        }
+
+        return partsNeedRepair.toArray(new CarPart[partsNeedRepair.size()]);
+    }
+
+    public double totalRepairCost() {
+        double cost = 0.0;
+
+        for(int i = 0; i < carParts.size(); i++) {
+            CarPart p = carParts.get(i);
+            if(!p.isWorking()) {
+                cost += p.getCost();
+            }
+        }
+
+        return cost;
+    }
+
+    public String completeDate() {
+        LocalDateTime date = LocalDateTime.now();
+
+        for(int i = 0; i < carParts.size(); i++) {
+            CarPart p = carParts.get(i);
+            if(!p.isWorking()) {
+                date = date.plus(p.getEta());
+            }
+        }
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("M/dd/yyyy");
+        return formatter.format(date);
     }
 }

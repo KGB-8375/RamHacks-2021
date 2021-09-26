@@ -12,8 +12,8 @@ public class CarmaxStatusPageController {
     Carmax carmax = CarmaxStatusPageApplication.carmax;
 
     @ResponseBody
-    @GetMapping("/")
-    public CarPart[] working(){
+    @GetMapping("/parts")
+    public CarPart[] allParts(){
         return carmax.carParts_a();
     }
 
@@ -29,9 +29,19 @@ public class CarmaxStatusPageController {
         return carmax.brokenParts_a();
     }
 
-    @RequestMapping(value = "/status")
-    public String status(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
-		model.addAttribute("name", name);
-		return "status";
+    @ResponseBody
+    @GetMapping("/repairs")
+    public CarPart[] repairs() {
+        return carmax.repairsInProgress();
+    }
+
+    @RequestMapping(value = "/")
+    public String status(Model model) {
+        model.addAttribute("repairStatus", String.format("%.0f%%", carmax.carProgress() * 100));
+        model.addAttribute("partsInRepair", carmax.repairsInProgress());
+        model.addAttribute("partsNeedRepair", carmax.repairsNotInProgress());
+        model.addAttribute("repairCost", carmax.totalRepairCost());
+        model.addAttribute("completeDate", carmax.completeDate());
+		return "index";
 	}
 }

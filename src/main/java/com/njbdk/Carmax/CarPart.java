@@ -7,6 +7,7 @@ public class CarPart {
     private String id;
 
     private boolean isWorking = true; //if the part is working
+    private boolean isInProgress = false; //if part is actively being repaired
     private Duration eta = Duration.ZERO;
     private String condition = "";
     private double cost = 0.0;
@@ -33,13 +34,14 @@ public class CarPart {
         this.name = name;
         this.id = toCamel(name);
     }
-    public CarPart(String name, boolean isWorking, Duration eta, String condition, double cost){
+    public CarPart(String name, boolean isWorking, Duration eta, String condition, double cost, boolean isInProgress){
         this.name = name;
         this.id = toCamel(name);
         this.isWorking = isWorking;
         this.eta = eta;
         this.condition = condition;
         this.cost = cost;
+        this.isInProgress = isInProgress;
     }
 
     //getter to return name
@@ -85,6 +87,14 @@ public class CarPart {
         return this.eta;
     }
 
+    //getter to check ETA as a string
+    public String getEta_s() {
+        return this.eta.toString()
+            .substring(2)
+            .replaceAll("(\\d[HMS])(?!$)", "$1 ")
+            .toLowerCase();
+    }
+
     //getter to check condition of part
     public String getCondition() {
         return this.condition;
@@ -93,5 +103,15 @@ public class CarPart {
     //getter to check cost to fix/replace part
     public double getCost() {
         return this.cost;
+    }
+
+    //setter to make repair in progress
+    public void setInProgress(boolean inProgress) {
+        this.isInProgress = inProgress;
+    }
+
+    //getter to check if repair is in progress
+    public boolean isInProgress() {
+        return this.isInProgress;
     }
 }
