@@ -11,7 +11,6 @@ public class CarPart {
     private Duration eta = Duration.ZERO;
     private String condition = "";
     private double cost = 0.0;
-    private int vin = 0;
 
     //convert name to camel case
     private String toCamel(String s) {
@@ -35,7 +34,7 @@ public class CarPart {
         this.name = name;
         this.id = toCamel(name);
     }
-    public CarPart(String name, boolean isWorking, Duration eta, String condition, double cost, boolean isInProgress, int vin){
+    public CarPart(String name, boolean isWorking, Duration eta, String condition, double cost, boolean isInProgress){
         this.name = name;
         this.id = toCamel(name);
         this.isWorking = isWorking;
@@ -43,7 +42,6 @@ public class CarPart {
         this.condition = condition;
         this.cost = cost;
         this.isInProgress = isInProgress;
-        this.vin = vin;
     }
     
     //setter to change status
@@ -97,10 +95,6 @@ public class CarPart {
         return this.cost;
     }
 
-    public void setVin(int vin){
-        this.vin = vin;
-    }
-
     //setter to make repair in progress
     public void setInProgress(boolean inProgress) {
         this.isInProgress = inProgress;
@@ -121,7 +115,4 @@ public class CarPart {
         return this.isInProgress;
     }
 
-    public int getVin(){
-        return this.vin;
-    }
 }

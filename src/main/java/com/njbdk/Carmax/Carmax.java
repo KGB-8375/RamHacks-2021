@@ -3,17 +3,27 @@ package com.njbdk.Carmax;
 //import statements
 import java.util.ArrayList;
 import java.util.List;
-import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 //Class to contruct a car
 public class Carmax {
     private List<CarPart> carParts = new ArrayList<CarPart>(); //makes list for carParts
+    private String vin; //car VIN number
+    private String make; //car manufacturer
+    private String model; //car model
+    private int year; //car year
+    private String picture; //car picture
 
     //constructor to add all car parts
-    public Carmax() {
-        carParts.add(new CarPart("Brakes", false, Duration.ofMillis(20), "lil bit squeaky", 2000.69, true, 1));
+    public Carmax(String vin, String make, String model, int year, String picture) {
+        this.vin = vin;
+        this.make = make;
+        this.model = model;
+        this.year = year;
+        this.picture = picture;
+
+        carParts.add(new CarPart("Brakes"));
         carParts.add(new CarPart("Tail Lights"));
         carParts.add(new CarPart("Head Lights"));
         carParts.add(new CarPart("Engine"));
@@ -201,13 +211,27 @@ public class Carmax {
         return formatter.format(date);
     }
 
-    public int[] vinNumber(){
-        int[] a = new int[carParts.size()];
-        CarPart[] b = brokenParts_a();
-        for(int i = 0; i<b.length; i++){
-            CarPart p = b[i];
-            a[i] = p.getVin();
-        }
-        return a;
+    public String getVin() {
+        return this.vin;
+    }
+
+    public void setVin(String vin) {
+        this.vin = vin;
+    }
+
+    public String getMake() {
+        return this.make;
+    }
+
+    public String getModel() {
+        return this.model;
+    }
+
+    public int getYear() {
+        return this.year;
+    }
+
+    public String getPicture() {
+        return this.picture;
     }
 }

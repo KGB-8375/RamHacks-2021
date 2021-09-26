@@ -21,17 +21,9 @@
       </a>
 </nav>
     <div class="container mt-4">
-        <h2 class="text-info text-center">Vehicles Available</h2>
-        <hr>
-        <div class="row" th:each="car: ${cars}">
-            <div class="col-6 mx-auto">
-                <h3 class="text-center"><a th:href="'/status?vin=' + ${car.vin}" th:text="${car.year} + ' ' + ${car.make} + ' ' + ${car.model}" class="text-info"></a></h3>
-                <p class="text-muted text-center" th:text="'VIN: ' + ${car.vin}"></p>
-                <figure class="figure">
-                    <img th:src="${car.picture}" class="figure-img img-fluid rounded">
-                </figure>
-            </div>
-        </div>
+        <h2 class="text-danger">Error: The VIN number you searched for could not be found!</h2>
+        <h4 th:text="'VIN: ' + ${vinNumber}"></h4>
+        <button type="button" class="btn btn-outline-primary" onclick="location.href='/';">Go Back</button>
     </div>
 </body>
 </html>

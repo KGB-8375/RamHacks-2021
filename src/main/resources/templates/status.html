@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Bootstrap CSS -->
+    <!--link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.1.1/dist/flatly/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="custom.css">
+    <!-- Title -->
+    <title>Carmax Status Page</title>
+</head>
+<body>
+<nav class="navbar navbar-custom">
+      <a class="navbar-brand" href="/">
+          <img src="carmax.png" height="60" width="250" style="margin-left: 25px!important" alt="">
+      </a>
+</nav>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-4">
+                <figure class="figure">
+                    <img th:src="${car.picture}" class="figure-img img-fluid rounded">
+                </figure>
+                <p class="text-muted" th:text="'VIN: ' + ${car.vin}"></p>
+                <h3 class="text-info" th:text="${car.year} + ' ' + ${car.model}"></h3>
+                <h4 th:text="${car.make}"></h4>
+                <p th:text="'Reconditioning Progress: ' + ${repairStatus}" class="text-muted tm-2"></p>
+                <div class="progress">
+                    <div class="progress-bar bg-success" role="progressbar" th:style="'width: ' + ${repairStatus} + ';'"></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <h2 class="text-info">Reconditioning Information</h2>
+                <h5>In-Progress</h5>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Condition</th>
+                            <th scope="col">ETA</th>
+                            <th scope="col">Cost</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="part: ${partsInRepair}">
+                            <th scope="row" th:text="${part.name}"></th>
+                            <td th:text="${part.condition}"></td>
+                            <td th:text="${part.eta_s}"></td>
+                            <td th:text="${#numbers.formatCurrency(part.cost)}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h5>To Be Repaired</h5>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Condition</th>
+                            <th scope="col">ETA</th>
+                            <th scope="col">Cost</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="part: ${partsNeedRepair}">
+                            <th scope="row" th:text="${part.name}"></th>
+                            <td th:text="${part.condition}"></td>
+                            <td th:text="${part.eta_s}"></td>
+                            <td th:text="${#numbers.formatCurrency(part.cost)}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h5>Summary</h5>
+                <table class="table table-hover">
+                    <tbody>
+                        <tr>
+                            <th scope="row">Total Repair Cost: </th>
+                            <td th:text="${#numbers.formatCurrency(repairCost)}"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Estimated Date of Completion: </th>
+                            <td th:text="${completeDate}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
